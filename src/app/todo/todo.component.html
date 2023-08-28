@@ -1,1 +1,41 @@
-<p>todo works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <h3 class="bg-primary text-white p-3">Todo List</h3>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" />
+                <button class="btn btn-outline-primary">Add</button>
+            </div>
+
+            <div class="form-check mb-3">
+                <input
+                    type="checkbox"
+                    name=""
+                    id="displayAll"
+                    class="form-check-input"
+                />
+                <label for="displayAll" class="form-check-label">
+                    Hepsini Göster
+                </label>
+            </div>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let todo of todos">
+                        <td>{{ todo.id }}</td>
+                        <td>{{ todo.description }}</td>
+                        <td>{{ todo.action }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
