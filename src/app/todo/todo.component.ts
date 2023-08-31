@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { Model } from '../model'
+import { TodoItem } from '../todoitem'
 
 @Component({
     selector: 'app-todo',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core'
     styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent {
-    todos = [
-        { id: 1, description: 'Falan fistan', action: 'Yes' },
-        { id: 2, description: 'Falan fistan', action: 'No' },
-        { id: 3, description: 'asdasdadasd', action: 'No' },
-        { id: 3, description: 'Falasdasdan asdasdasd', action: 'Yes' },
-    ]
+    model = new Model()
+
+    getName() {
+        return this.model.name
+    }
+
+    getItems() {
+        return this.model.items
+    }
+
+    addTodo(value: string) {
+        const newTodo: TodoItem = {
+            description: value,
+            action: 'Yes',
+        }
+
+        this.model.items.push(newTodo)
+    }
 }
