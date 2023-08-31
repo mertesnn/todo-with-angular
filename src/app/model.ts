@@ -7,10 +7,9 @@ export class Model {
     constructor() {
         this.name = 'Mert'
         this.items = [
-            { description: 'Falan fistan', action: 'Yes' },
-            { description: 'Falan fistan', action: 'No' },
-            { description: 'asdasdadasd', action: 'No' },
-            { description: 'Falasdasdan asdasdasd', action: 'Yes' },
+            { description: 'Falan fistan', action: true },
+            { description: 'Falan fistan', action: false },
+            { description: 'asdasdadasd', action: false },
         ]
     }
 }

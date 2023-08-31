@@ -10,20 +10,27 @@ import { TodoItem } from '../todoitem'
 export class TodoComponent {
     model = new Model()
 
+    displayAll: boolean = true
+
     getName() {
         return this.model.name
     }
 
     getItems() {
+        if (!this.displayAll) {
+            return this.model.items.filter((item) => !item.action)
+        }
         return this.model.items
     }
 
     addTodo(value: string) {
-        const newTodo: TodoItem = {
-            description: value,
-            action: 'Yes',
+        if (value) {
+            this.model.items.push({
+                description: value,
+                action: false,
+            })
+        } else {
+            alert('This field required.')
         }
-
-        this.model.items.push(newTodo)
     }
 }
