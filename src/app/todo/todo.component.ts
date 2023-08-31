@@ -11,6 +11,7 @@ export class TodoComponent {
     model = new Model()
 
     displayAll: boolean = true
+    inputText: string = ''
 
     getName() {
         return this.model.name
@@ -23,12 +24,15 @@ export class TodoComponent {
         return this.model.items
     }
 
-    addTodo(value: string) {
-        if (value) {
-            this.model.items.push({
-                description: value,
+    addTodo() {
+        if (this.inputText) {
+            const newTodo: TodoItem = {
+                description: this.inputText,
                 action: false,
-            })
+            }
+            this.model.items.push(newTodo)
+            localStorage.setItem('items', JSON.stringify(this.model.items))
+            this.inputText = ''
         } else {
             alert('This field required.')
         }
@@ -36,5 +40,13 @@ export class TodoComponent {
 
     getCompletedTodoCount() {
         return this.model.items.filter((item) => item.action).length
+    }
+
+    getAddButtonClasses() {
+        return {
+            disabled: !this.inputText,
+            'btn-primary': this.inputText,
+            'btn-secondary': !this.inputText,
+        }
     }
 }
