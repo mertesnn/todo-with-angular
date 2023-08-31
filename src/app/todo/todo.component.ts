@@ -33,4 +33,8 @@ export class TodoComponent {
             alert('This field required.')
         }
     }
+
+    getCompletedTodoCount() {
+        return this.model.items.filter((item) => item.action).length
+    }
 }
