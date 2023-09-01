@@ -31,11 +31,15 @@ export class TodoComponent {
                 action: false,
             }
             this.model.items.push(newTodo)
-            localStorage.setItem('items', JSON.stringify(this.model.items))
             this.inputText = ''
+            this.updateLS()
         } else {
             alert('This field required.')
         }
+    }
+
+    updateLS() {
+        localStorage.setItem('items', JSON.stringify(this.model.items))
     }
 
     getCompletedTodoCount() {

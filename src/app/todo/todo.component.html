@@ -84,6 +84,7 @@
                                     type="checkbox"
                                     [(ngModel)]="todo.action"
                                     class="form-check-input"
+                                    (change)="updateLS()"
                                 />
                             </td>
                         </tr>
