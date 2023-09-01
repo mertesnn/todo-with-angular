@@ -1,6 +1,6 @@
 # TodoWithAngular
 
-This project is basic todo project with **_Angular_** and **_Bootstrap_**. Angular features that I used;
+This is basic todo project with **_Angular_** and **_Bootstrap_**. Angular features that I used;
 
 **- ng-template**
 **- ng-model**
@@ -30,4 +30,4 @@ ng serve -o
 
 ### Demo
 
-[Demo Link](todo-with-angular-lake.vercel.app)
+[Demo Link](https://todo-with-angular-lake.vercel.app/)
